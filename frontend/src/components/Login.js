@@ -1,9 +1,9 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { host } from "../apiconfig";
 const Login = (props) => {
-  const host = "http://localhost:5000";
+  
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 

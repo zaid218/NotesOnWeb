@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
-
+import {host} from "../../apiconfig"
 const NoteState = (props) => {
-    const host = "http://localhost:5000"
+    
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
       //GET ALL NOTE
