@@ -68,7 +68,7 @@ const Notes = (props) => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+              <h5 className="modal-title" id="exampleModalLabel" style={{ color: "black" }}>
                 Edit Note
               </h5>
               <button
@@ -81,7 +81,7 @@ const Notes = (props) => {
             <div className="modal-body">
               <form className="my-3">
                 <div className="mb-3">
-                  <label htmlFor="etitle" className="form-label">
+                  <label htmlFor="etitle" className="form-label" style={{ color: "black" }}>
                     Title
                   </label>
                   <input
@@ -98,7 +98,7 @@ const Notes = (props) => {
                 </div>
 
                 <div className="mb-3">
-                  <label htmlFor="edescription" className="form-label">
+                  <label htmlFor="edescription" className="form-label" style={{ color: "black" }}>
                     Description
                   </label>
                   <input
@@ -113,7 +113,7 @@ const Notes = (props) => {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="etag" className="form-label">
+                  <label htmlFor="etag" className="form-label" style={{ color: "black" }}>
                     Tag
                   </label>
                   <input

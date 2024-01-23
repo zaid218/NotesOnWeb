@@ -1,34 +1,34 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios"; // Import Axios
 import { host } from "../apiconfig";
+
 const Login = (props) => {
-  
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${host}/api/auth/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+
+    try {
+      const response = await axios.post(`${host}/api/auth/login`, {
         email: credentials.email,
         password: credentials.password,
-      }),
-    });
+      });
 
-    const json = await response.json();
-    console.log(json);
+      const json = response.data;
+      console.log(json);
 
-    if (json.success) {
-      localStorage.setItem("token", json.authtoken);
-      navigate("/");
-      props.showAlert("logged in successfully", "success");
-    } else {
-      props.showAlert("invalid credentials", "danger");
+      if (json.success) {
+        localStorage.setItem("token", json.authtoken);
+        navigate("/");
+        props.showAlert("logged in successfully", "success");
+      } else {
+        props.showAlert("invalid credentials", "danger");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      // Handle errors appropriately, e.g., display an error message to the user
     }
   };
 

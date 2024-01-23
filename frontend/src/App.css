@@ -49,5 +49,5 @@ html, body {
 }
 input[type="text"], textarea {
   background-color: rgb(208, 235, 204);
-  color: white;
+  color: rgb(5, 3, 3);
 }
